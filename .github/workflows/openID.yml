@@ -29,11 +29,11 @@ jobs:
     - uses: actions/checkout@v2
     - uses: hashicorp/setup-terraform@v3
       
-    - name: install az CLI
-      run: |
-        sudo apt-get update
-        sudo apt-get upgrade
-        sudo apt-get install azure-cli
+    #- name: install az CLI
+    #  run: |
+    #    sudo apt-get update
+    #    sudo apt-get upgrade
+    #    sudo apt-get install azure-cli
  
     - name: Terraform Init
       id: init
