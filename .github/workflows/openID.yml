@@ -27,9 +27,12 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v2
+    - name: install az CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get upgrade
+        sudo apt-get install azure-cli
  
-
-         
     - name: 'Terraform Init'
       uses: hashicorp/terraform-github-actions@master
       with:
