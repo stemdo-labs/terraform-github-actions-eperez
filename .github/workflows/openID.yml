@@ -38,7 +38,15 @@ jobs:
       continue-on-error: true
  
 
+   # - name: Terraform Apply
+   #   run: terraform apply -auto-approve tfplan
+   #     tf_actions_subcommand:'apply'
+   #     tf_actions_working_dir:"./terraform"
+
+
     - name: Terraform Apply
-      run: terraform apply -auto-approve tfplan
-        tf_actions_subcommand:'apply'
-        tf_actions_working_dir:"./terraform"
+      uses: cloudposse/github-action-atmos-terraform-apply@v2
+      with:
+        component: "foobar"
+        stack: "plat-ue2-sandbox"
+        atmos-config-path: ./rootfs/usr/local/etc/atmos/
